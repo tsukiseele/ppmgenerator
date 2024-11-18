@@ -1,4 +1,6 @@
 # About
+*This is just a Minecraft mod helper program*
+
 A painting resource package generator for **[Painter++](https://www.curseforge.com/minecraft/mc-mods/paintings)**
 
 ### Usage
