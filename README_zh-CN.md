@@ -1,8 +1,8 @@
 # Minecraft Painter++ Resource Pack Generator 
-这只是一个Minecraft的模组辅助程序
+*这只是一个Minecraft模组 Painter++ 的辅助程序*
 
-用于 **Painting++** 的资源包配置一键生成器
-A painting resource package generator for Painter++
+用于 **[Painter++](https://www.curseforge.com/minecraft/mc-mods/paintings)** 的资源包配置一键生成器
+
 ### 使用方法
 
 将准备好的图片文件放入`input`文件夹中

@@ -1,5 +1,5 @@
-# About
-*This is just a Minecraft mod helper program*
+# Minecraft Painter++ Resource Pack Generator 
+*This is just a helper program for the Minecraft mod Painter++*
 
 A painting resource package generator for **[Painter++](https://www.curseforge.com/minecraft/mc-mods/paintings)**
 
