@@ -1,4 +1,4 @@
-# 说明
+# Minecraft Painter++ Resource Pack Generator 
 这只是一个Minecraft的模组辅助程序
 
 用于 **Painting++** 的资源包配置一键生成器
