@@ -1,0 +1,17 @@
+{
+  "name": "ppmgenerator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "generate": "node ./index.js",
+    "build": "pkg ./index.js -t win -o app"
+  },
+   "outputPath": "dist",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "image-size": "^1.1.1"
+  }
+}
