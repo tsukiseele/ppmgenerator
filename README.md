@@ -12,5 +12,5 @@ The program will automatically generate the appropriate frame size based on the 
 
 | Length | <=1024px | <=2048px | >2048px
 |-| :-: | :-: | :-: |
-|-| 2x? | 3x? | 4x? |
-|-| 2x? | 3x? | 4x? |
+|-| 2x | 3x | 4x |
+|-| 2x | 3x | 4x |
