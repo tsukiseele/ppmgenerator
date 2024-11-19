@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "bun ./src/main.ts",
-    "build-windows-x64": "bun build --compile --target=bun-windows-x64 ./src/main.ts --outfile PPMG",
+    "run-exe": "./PPMG.exe",
+    "build-windows-x64": "bun build --compile --target=bun-windows-x64 ./src/main.ts --outfile PPMGenerator-x86_64",
     "build-linux-x64": "bun build --compile --target=bun-linux-x64 ./src/main.ts --outfile PPMG",
     "build-linux-arm64": "bun build --compile --target=bun-linux-arm64 ./src/main.ts --outfile PPMG",
     "build-darwin-x64": "bun build --compile --target=bun-darwin-arm64 ./src/main.ts --outfile PPMG",

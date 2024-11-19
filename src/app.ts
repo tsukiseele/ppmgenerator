@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import { existsSync } from "node:fs";
 
 const configPath = path.join('config.json')
+
 const initialize = async () => {
     const isConfigExists = existsSync(configPath)
     if (!isConfigExists) {
@@ -14,7 +15,7 @@ const initialize = async () => {
                 "pack": {
                     "pack_format": 15,
                     "supported_formats": {
-                        "min_inclusive": 16,
+                        "min_inclusive": 15,
                         "max_inclusive": 1048576
                     },
                     "description": "Painting Pack made with PPMGenerator!"
@@ -23,6 +24,10 @@ const initialize = async () => {
         }))
     }
     global.Config = JSON.parse(await fs.readFile(configPath, { encoding: 'utf-8' }))
+
+    console.log('===================== CONFIG =====================');
+    console.log(global.Config);
+    console.log('==================================================');
 }
 
 export { initialize }

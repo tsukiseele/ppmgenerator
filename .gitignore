@@ -134,6 +134,7 @@ dist
 
 input
 output
+config.json
 
 *.zip
 *.exe

@@ -6,9 +6,14 @@ import readline from "node:readline/promises"
 const rl = readline.createInterface(stdin, stdout)
 const readPathInput = () => new Promise<string>(async (resolve, reject) => {
     do {
-        const packPath = await rl.question('Enter the image directory path or drag the directory into the window:\n ')
-        const isDrag = packPath.startsWith('&')
-        const inputDir = isDrag ? packPath.slice(3, packPath.length - 1).trim() : packPath
+        const packPath = await rl.question('Enter the image directory path(or drag the directory into the window):\n')
+        let inputDir = ''
+
+        if (packPath.startsWith('&')) {
+            inputDir = packPath.trim().slice(3, packPath.length - 1).trim()
+        } else if (packPath.startsWith('"')) {
+            inputDir = packPath.trim().slice(1, packPath.length - 1).trim()
+        }
         try {
             const inputDirStats = await fs.stat(inputDir)
             if (!inputDirStats.isDirectory) {
