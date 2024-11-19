@@ -18,7 +18,8 @@
   "description": "",
   "dependencies": {
     "archiver": "^7.0.1",
-    "image-size": "^1.1.1"
+    "image-size": "^1.1.1",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@types/archiver": "^6.0.3"

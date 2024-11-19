@@ -1,11 +1,20 @@
-declare var Config: {
+declare var Config: Configuration
+
+interface Configuration {
     SIZE_4X: number,
     SIZE_3X: number,
     BLOCK_PIXEL_SIZE: number,
+    IMAGE_FIT: boolean,
+    IMAGE_MINILIZE: boolean,
+    IMAGE_BORDER: {
+        enable: boolean,
+        borderSize: number,
+        borderColor: { r: number, g: number, b: number, alpha: number },
+    },
     MCMETA: {
         pack: {
             pack_format: number,
-            upported_formats: {
+            supported_formats: {
                 min_inclusive: number,
                 max_inclusive: number
             },

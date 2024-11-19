@@ -5,28 +5,37 @@ const calcAbsRatio = (width: number, height: number): number => {
     if (whRatio > 0.5) return 0.5
     return 1
 }
-const calcMaxBlockSize = (width: number, height: number, absRatio: number): number => {
-    if (absRatio == 2 / 3) {
-        return 3
-    }
-    const maxSize = width > height ? width : height
-    if (maxSize > Config.SIZE_4X) {
-        return 4
-    } else if (maxSize > Config.SIZE_3X) {
-        return 3
+
+const calcMaxBlockSize = (width: number, height: number, absRatio: number): {width: number, height: number} => {
+    const maxPixelSize = width > height ? width : height
+    let blockSize = 1
+    if (maxPixelSize > Config.SIZE_4X) {
+        blockSize = 4
+    } else if (maxPixelSize > Config.SIZE_3X) {
+        blockSize = 3
     } else {
-        return 2
+        blockSize = 2
+    }
+    const maxSize = blockSize * Config.BLOCK_PIXEL_SIZE
+    let minSize = maxSize * absRatio
+    const offset = minSize % Config.BLOCK_PIXEL_SIZE
+    if (offset != 0) {
+        if (offset > Config.BLOCK_PIXEL_SIZE / 2) {
+            minSize = minSize - offset + Config.BLOCK_PIXEL_SIZE
+        } else {
+            minSize = minSize - offset;
+        }
+    }
+    if (width > height) {
+        return { width: maxSize, height: minSize}
+    } else {
+        return { width: minSize, height: maxSize}
     }
 }
-const calcBlockSize = (width: number, height: number): {x: number, y: number} => {
-    const ratio = calcAbsRatio(width, height)
-    const size = calcMaxBlockSize(width, height, ratio)
-    if (width > height) {
-        return { x: size * Config.BLOCK_PIXEL_SIZE, y: size * Config.BLOCK_PIXEL_SIZE * ratio }
-    } else {
 
-        return { x: size * Config.BLOCK_PIXEL_SIZE * ratio, y: size * Config.BLOCK_PIXEL_SIZE }
-    }
+const calcBlockSize = (width: number, height: number): {width: number, height: number} => {
+    const ratio = calcAbsRatio(width, height)
+    return calcMaxBlockSize(width, height, ratio)
 }
 
 export default calcBlockSize
