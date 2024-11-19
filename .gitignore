@@ -135,5 +135,5 @@ dist
 input
 output
 
-.zip
-.exe
+*.zip
+*.exe
