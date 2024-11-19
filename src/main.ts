@@ -24,7 +24,7 @@ const generateConfiguration = async (images: string[]) => {
         const dimensions = await new Promise<{width: number, height: number}>((resolve, reject) => {
             sizeOf(file, function (err, dimensions) {
                 if (dimensions && dimensions.width && dimensions.height) {
-                    resolve({width: dimensions.width!, height: dimensions.height!})
+                    resolve({width: dimensions.width, height: dimensions.height})
                 }
                 reject(err);
             });
