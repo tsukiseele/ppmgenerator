@@ -11,7 +11,7 @@ await initialize()
 // generate pack config
 const inputDir = await readPathInput()
 const outputPath = path.join(inputDir, '../', path.basename(inputDir) + '.zip')
-console.log('INPUT_DIR <<< ', inputDir);
+console.log('INPUT <<< ', inputDir);
 console.log('Processing...');
 
 const filePathArr = [];
@@ -56,4 +56,4 @@ filePathArr.forEach(file =>
 await archive.finalize();
 
 console.log('Completed!');
-console.log('OUTPUT_PATH >>> ', outputPath);
+console.log('OUTPUT >>> ', outputPath);
