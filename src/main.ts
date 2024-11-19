@@ -50,15 +50,6 @@ const generateConfiguration = async (files: string[]) => {
                 Math.floor(x > y ? size.width * y / x : size.height),
                 { fit: 'cover' })
         }
-        if (Config.IMAGE_BORDER) {
-            image = image.extend({
-                top: 10,
-                bottom: 10,
-                left: 10,
-                right: 10,
-                background: { r: 0, g: 0, b: 0, alpha: 0 }
-            })
-        }
         imageDataSet.push(image.toBuffer())
 
         // const dimensions = await new Promise<{ width: number, height: number }>((resolve, reject) => {
